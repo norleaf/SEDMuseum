@@ -9,9 +9,9 @@ create table product
 p_name	varchar(30),
 p_group	varchar(30),
 supplyer	varchar(30),
-purchase_prize	int,
-prize_kr	double, 
-prize_euro double,
+purchase_price	int,
+price_kr	double, 
+price_euro double,
 discount	double, 
 amount int
 );
