@@ -5,14 +5,15 @@ use sedmuseum;
 
 drop table if exists product; 
 create table product
-(nr	int(3)	auto_increment primary key,
+(nr	int(4)	auto_increment primary key,
 p_name	varchar(30),
 p_group	int(3),
 supplyer	varchar(30),
 purchase_price	int,
 price_kr	double, 
 price_euro double,
-discount	double, 
+discount_kr	double, 
+discount_eur double, 
 amount int
 );
 
