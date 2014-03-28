@@ -113,16 +113,17 @@
       <Entity type="Class">
         <Name>Invoice_lines</Name>
         <Access>Public</Access>
-        <Location left="723" top="79" />
-        <Size width="162" height="94" />
+        <Location left="716" top="55" />
+        <Size width="162" height="111" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int amount</Member>
+        <Member type="Field">private String currency</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Till</Name>
         <Access>Public</Access>
-        <Location left="154" top="102" />
+        <Location left="157" top="55" />
         <Size width="162" height="128" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private Date t_date</Member>
@@ -133,8 +134,8 @@
       <Entity type="Class">
         <Name>Invoice</Name>
         <Access>Public</Access>
-        <Location left="441" top="79" />
-        <Size width="162" height="128" />
+        <Location left="440" top="55" />
+        <Size width="162" height="111" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int nr</Member>
         <Member type="Field">private Date i_date</Member>
@@ -143,7 +144,7 @@
       <Entity type="Class">
         <Name>Employee</Name>
         <Access>Public</Access>
-        <Location left="476" top="323" />
+        <Location left="440" top="314" />
         <Size width="162" height="230" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int nr</Member>
@@ -170,8 +171,8 @@
       <Entity type="Class">
         <Name>Product</Name>
         <Access>Public</Access>
-        <Location left="988" top="79" />
-        <Size width="162" height="213" />
+        <Location left="988" top="55" />
+        <Size width="162" height="196" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int nr</Member>
         <Member type="Field">private String p_name</Member>
@@ -191,7 +192,7 @@
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="False">
           <X>391</X>
-          <Y>167</Y>
+          <Y>121</Y>
         </BendPoint>
         <Direction>Bidirectional</Direction>
         <AssociationType>Association</AssociationType>
@@ -209,7 +210,7 @@
         </BendPoint>
         <BendPoint relativeToStartShape="False">
           <X>1061</X>
-          <Y>342</Y>
+          <Y>301</Y>
         </BendPoint>
         <Direction>Bidirectional</Direction>
         <AssociationType>Association</AssociationType>
@@ -222,8 +223,8 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>513</X>
-          <Y>282</Y>
+          <X>516</X>
+          <Y>275</Y>
         </BendPoint>
         <Direction>Bidirectional</Direction>
         <AssociationType>Association</AssociationType>
@@ -236,12 +237,12 @@
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>691</X>
-          <Y>137</Y>
+          <X>683</X>
+          <Y>124</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>628</X>
-          <Y>137</Y>
+          <X>627</X>
+          <Y>124</Y>
         </BendPoint>
         <Direction>Bidirectional</Direction>
         <AssociationType>Association</AssociationType>
@@ -254,12 +255,12 @@
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>916</X>
-          <Y>123</Y>
+          <X>913</X>
+          <Y>125</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>960</X>
-          <Y>123</Y>
+          <X>959</X>
+          <Y>125</Y>
         </BendPoint>
         <Direction>Bidirectional</Direction>
         <AssociationType>Association</AssociationType>
