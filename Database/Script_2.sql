@@ -22,8 +22,8 @@ add foreign key(employee) references employee(nr),
 add foreign key(i_date) references till(t_date),
 engine = innodb;
 
-drop table if exists telefon;
-create table telefon
+drop table if exists telephone;
+create table telephone
 (employee	int(3)	not null,
 tlf			char(8)	not null,
 primary key(employee, tlf),
