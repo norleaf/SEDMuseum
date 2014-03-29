@@ -1,4 +1,4 @@
-use sedmuseum;
+use sedmuseum; 
 
 insert into employee values
 (0, 'Laila', 'Christensen', 'Elverhoejsvej 001', '4700', 'Næstved'), 
@@ -15,3 +15,24 @@ insert into telephone values
 (3, '66778899'),
 (4, '12234556'),
 (4, '23455678');
+
+insert into p_group(category)
+values
+('Bøger'),
+('Hæfter'),
+('Legetøj'),
+('Café'), 
+('Diverse'), 
+('Smykker'), 
+('Mobiler'), 
+('Postkort'),
+('Museums Glas'),
+('Kâhler Keramik'),
+('Holmegaard'),
+('Katalog'), 
+('Plakat'),
+('Mjød'), 
+('Øl'), 
+('Weibel'), 
+('Klippeark');
+
