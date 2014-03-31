@@ -31,7 +31,7 @@ values	(1210, 'Liv og Levn 1 (kopi)', 2, null, null, 40.00, 6.00, 36.00, 5.00,10
 (2180,'Stor Stempelkaffe', 4, null, null,  30.00, 4.00, null, null, 0),
 (2181, 'Juice, kildevand', 4, null, null, 6.00, 0.80, null, null, 0),
 (2183,'Varm Kakao', 4, null, null, 10.00, 7.5, null, null, 0);
-(
+
 
 
 

@@ -6,7 +6,7 @@ use sedmuseum;
 drop table if exists product; 
 create table product
 (nr	int(4)	auto_increment primary key,
-p_name	varchar(30),
+p_name	varchar(50),
 p_group	int(3),
 supplyer	varchar(30),
 purchase_price	int,
