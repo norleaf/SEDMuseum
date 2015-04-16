@@ -1,36 +1,27 @@
-use sedmuseum;
-
-set foreign_key_checks = 0;
-
-drop table if exists invoicelines;
-create table invoicelines
-(invoice_nr	int,
-product_nr	int(3),
-amount	int,
-valuta	int,
-primary key(invoice_nr, product_nr),
-foreign key(invoice_nr) references invoice(nr),
-foreign key(product_nr) references product(nr)
-)engine = InnoDB;
-
-alter table product
-add foreign key(p_group) references p_group(nr),
-engine = innodb;
-
-alter table invoice
-add foreign key(employee) references employee(nr),
-add foreign key(i_date) references till(t_date),
-engine = innodb;
-
-drop table if exists telephone;
-create table telephone
-(employee	int(3)	not null,
-tlf			char(8)	not null,
-primary key(employee, tlf),
-foreign key(employee) references employee(nr)
-)engine = innodb;
-
-alter table employee
-drop column tlf_home,
-drop column tlf_cell,
-drop column tlf_work;
+USE sedmuseum; SET foreign_key_checks = 0;
+DROP TABLE IF EXISTS invoicelines;
+CREATE TABLE invoicelines
+(invoice_nr INT,
+product_nr INT(3),
+amount INT, 
+PRIMARY KEY(invoice_nr, product_nr), 
+FOREIGN KEY(invoice_nr) REFERENCES invoice(nr) ON DELETE CASCADE ON UPDATE CASCADE, 
+FOREIGN KEY(product_nr) REFERENCES product(nr) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+ALTER TABLE product ADD FOREIGN KEY(p_group) REFERENCES p_group(nr) ON
+DELETE CASCADE ON UPDATE CASCADE, ENGINE = innodb; 
+ALTER TABLE invoice 
+ADD FOREIGN KEY(employee) REFERENCES employee(nr) ON DELETE CASCADE ON UPDATE CASCADE, 
+ADD FOREIGN KEY(i_date) REFERENCES till(t_date) ON DELETE CASCADE ON UPDATE CASCADE,
+ENGINE = innodb;
+DROP TABLE IF EXISTS telephone;
+CREATE TABLE telephone
+(employee INT(3) NOT NULL,
+tlf CHAR(8) NOT NULL, 
+PRIMARY KEY(employee, tlf), 
+FOREIGN KEY(employee) REFERENCES employee(nr) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = innodb; 
+ALTER TABLE employee
+DROP COLUMN tlf_home,
+DROP COLUMN tlf_cell,
+DROP COLUMN tlf_work;

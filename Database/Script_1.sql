@@ -1,53 +1,49 @@
-drop database if exists sedmuseum; 
-create database sedmuseum;
-
-use sedmuseum;
-
-drop table if exists product; 
-create table product
-(nr	int(4)	auto_increment primary key,
-p_name	varchar(50),
-p_group	int(3),
-supplyer	varchar(30),
-purchase_price	int,
-price_kr	double, 
-price_euro double,
-discount_kr	double, 
-discount_eur double, 
-amount int
+DROP DATABASE IF EXISTS sedmuseum;
+CREATE DATABASE sedmuseum; USE sedmuseum;
+DROP TABLE IF EXISTS product;
+CREATE TABLE product
+(nr INT(4) PRIMARY KEY,
+p_name VARCHAR(100),
+p_group INT(3),
+supplyer VARCHAR(30),
+purchase_price INT,
+price_kr DOUBLE, 
+price_euro DOUBLE,
+discount_kr DOUBLE, 
+discount_eur DOUBLE, 
+amount INT
 );
-
-drop table if exists p_group; 
-create table p_group
-(nr	int(3)	auto_increment primary key,
-category	varchar(30)
+DROP TABLE IF EXISTS p_group;
+CREATE TABLE p_group
+(nr INT(3) AUTO_INCREMENT PRIMARY KEY,
+category VARCHAR(30)
 );
-
-drop table if exists employee;
-create table employee
-(nr	int(3)	auto_increment primary key,
-fname	varchar(20),
-lname	varchar(20),
-tlf_home	char(8),
-tlf_cell	char(8),
-tlf_work	char(8),
-address		varchar(50),
-zipcode		char(4), 
-city		varchar(20)
+DROP TABLE IF EXISTS employee;
+CREATE TABLE employee
+(nr INT(3) AUTO_INCREMENT PRIMARY KEY,
+fname VARCHAR(20),
+lname VARCHAR(20),
+tlf_home CHAR(8),
+tlf_cell CHAR(8),
+tlf_work CHAR(8),
+address VARCHAR(50),
+zipcode CHAR(4), 
+city VARCHAR(20),
+username CHAR(4),
+passwrd CHAR(4)
 );
-
-drop table if exists invoice;
-create table invoice
-(nr	int	auto_increment primary key,
-i_date	date,
-employee	int(3)
+DROP TABLE IF EXISTS invoice;
+CREATE TABLE invoice
+(nr INT AUTO_INCREMENT PRIMARY KEY,
+i_date DATE,
+employee INT(3),
+valuta CHAR(3),
+discount BOOL
 );
-
-drop table if exists till;
-create table till
-(t_date	date	primary key, 
-start_balance_kr	int,
-start_balance_euro	int
+DROP TABLE IF EXISTS till;
+CREATE TABLE till
+(t_date DATE PRIMARY KEY, 
+start_balance_kr INT,
+start_balance_euro INT,
+closed BOOL
 );
-
-

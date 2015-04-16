@@ -1,12 +1,13 @@
-use sedmuseum; 
-
-insert into employee values
-(0, 'Laila', 'Christensen', 'Elverhoejsvej 001', '4700', 'Næstved'), 
-(0, 'Peter', 'Hansen', 'Bygade 5', '4700', 'Næstved'),
-(0, 'Jens', 'Jensen', 'Jernbanegade 3', '4690', 'Haslev'),
-(0, 'Anne', 'Pedersen', 'Allégade 24', '4700', 'Næstved');
-
-insert into telephone values
+USE sedmuseum; 
+SET foreign_key_checks = 0;
+TRUNCATE employee;
+INSERT INTO employee VALUES
+(0, 'Laila', 'Kristensen', 'Elverhoejsvej 001', '4700', 'Næstved', 'lakr', '1234'), 
+(0, 'Peter', 'Hansen', 'Bygade 5', '4700', 'Næstved', 'peha', '1234'),
+(0, 'Jens', 'Jensen', 'Jernbanegade 3', '4690', 'Haslev', 'jeje', '1234'),
+(0, 'Anne', 'Pedersen', 'Allégade 24', '4700', 'Næstved', 'anpe', '1234');
+TRUNCATE telephone;
+INSERT INTO telephone VALUES
 (1, '11223344'),
 (1, '22334455'), 
 (2, '33445566'),
@@ -15,10 +16,9 @@ insert into telephone values
 (3, '66778899'),
 (4, '12234556'),
 (4, '23455678');
-
-insert into p_group(category)
-values
-('Bøger'),
+TRUNCATE p_group;
+INSERT INTO p_group(category) VALUES
+('Billetter'),
 ('Hæfter'),
 ('Legetøj'),
 ('Café'), 
@@ -34,5 +34,58 @@ values
 ('Mjød'), 
 ('Øl'), 
 ('Weibel'), 
-('Klippeark');
-
+('Klippeark'),
+('Bøger');
+TRUNCATE product;
+INSERT INTO product VALUES	(1210, 'Liv og Levn 1 (kopi)', 2, NULL, NULL, 40.00, 6.00, 36.00, 5.00,100),
+(1211, 'Liv og Levn 2 (kopi)',2, NULL, NULL, 40.00,6.00,36.00, 5.00,100),
+(4320, 'Aktuel Plakat', 13, NULL, NULL, 10.00,1.50,9.00,1.00,100),
+(1379, 'Tidstavle', 13, NULL, NULL, 75.00, 10.00, 67.50, 9.00,100),
+(4205, 'A. Schröder, farvet', 8, NULL, NULL, 5.00, 0.60,4.50,0.50,100), 
+(4210, 'A. Schröder, sort/hvid',8, NULL, NULL, 3.00,0.40,3.00, 0.40,100), 
+(4250, 'Kuverter til postkort', 8, NULL, NULL, 1.00, 0.1,1,0.1,100),
+(2180, 'Stor Stempelkaffe', 4, NULL, NULL, 30.00, 4.00, 30.00, 4.00, 0),
+(2181, 'Juice, kildevand', 4, NULL, NULL, 6.00, 0.80, 6.00, 0.80, 0),
+(2183, 'Varm Kakao', 4, NULL, NULL, 10.00, 1.5, 10.00, 1.5, 0),
+(5001, 'Vedh. Ormesmykke',8, NULL, NULL,65.00,9.00,59.00,8.00,3),
+(5002, 'Vedh. Troldkors',8, NULL, NULL,65.00,9.00,59.00,8.00,5),
+(5003, 'Vedh. Ulvekorset/Islands Kors',8, NULL, NULL,195.00,26.00,176.00,24.00,100),
+(5004, 'Vedh. Kors, Middelalder',8, NULL, NULL,225.00,30.00,202.50,27.00,100),
+(5005, 'Vedh. Nøgle til Himlen',8, NULL, NULL,310.00,41.50,280.00,37.50,100),
+(1006, 'Aktuel Arkæologi', 18, NULL, NULL, 56.00, 8.00, 50.50, 7.00, 100),
+(1036, 'Brug Havnen', 18, NULL, NULL, 25.00, 4.00, 22.50, 3.00, 100),
+(1038, 'C.F. Hansen I Danmark og Tyskland', 18, NULL, NULL, 229.00, 31.00, 206.00, 28.00, 100),
+(1047, 'Danmark og Renæssancen', 18, NULL, NULL, 249.00, 34.00, 224.00, 30.00, 100),
+(1050, 'Danmarks kongelige familier i 1000 år', 18, NULL, NULL, 198.00, 27.00, 178.00, 24.00, 100),
+(1057, 'Det glaserede teater', 18, NULL, NULL, 129.00, 17.50, 116.00, 16.00, 100),
+(2201, 'Kuffertsæt', 3, NULL, NULL, 195.00, 26.50, 175.00, 23.50, 100),
+(2202, 'Blyanter 4 stk. i æske', 3, NULL, NULL, 8.00, 1.50, 7.00, 1.00, 100),
+(2203, 'Hånddukke egern/drager/isbjørn', 3, NULL, NULL, 70.00, 9.50, 63.00, 8.50, 100),
+(2204, 'Vw Beetle', 3, NULL, NULL, 39.00, 5.50, 35.00, 5, 100),
+(2205, 'Spyd', 3, NULL, NULL, 49.00, 7.00, 44.00, 6.00, 100),
+(2208, 'Sokkevenner pr stk', 3, NULL, NULL, 29.00, 4.00, 26.00, 3.50, 100),
+(2262, 'Saltkar med ske/horn', 5, NULL, NULL, 115.00, 16.00, 103.50, 14.00, 100), 
+(2298, 'Sæbe - mandel', 5, NULL, NULL, 20.00, 3.00, 18.00, 2.50, 100), 
+(3062, 'Hellig Tre Konger Lys', 5, NULL, NULL, 40.00, 5.50, 36.00, 5.00, 100),
+(2185, 'Nipsenål', 5, NULL, NULL, 15.00, 2.00, 13.50, 1.80, 100), 
+(2186, 'Nipsenåle', 5, NULL, NULL, 15.00,2.00,13.50,1.80,100), 
+(2111, 'Dannebro Ko', 5, NULL, NULL, 40.00, 5.50, 36.00, 2.50, 100), 
+(2112, 'Dannebro Blyant', 5, NULL, NULL, 8.00, 1.50, 7.50, 1.00, 100), 
+(2110, 'Drikkehorn', 5, NULL, NULL, 120.00, 16.00, 108.00, 15.00, 100), 
+(2360, 'Kähler USB-stik', 5, NULL, NULL, 399.00, 54.00, 359.00, 48.00, 100),
+(4015, 'Dorte Dukker m.fl.', 17, NULL, NULL, 20.00, 3.00, 18.00, 2.50, 100), 
+(4150, 'Glansbilleder', 17, NULL, NULL, 10.00, 1.50, 9.00, 1.00, 100), 
+(4061, 'Store og lille Marie dukker', 17, NULL, NULL, 10.00, 1.50,9.00,1.00, 100), 
+(4062, 'Store og lille Marie tøj', 17, NULL, NULL, 19.00, 3.00, 17.00, 2.50,100), 
+(2258, 'Chokolade i metalæske', 16, NULL, NULL, 42.00, 6.00, 37.50, 5.00, 100),
+(0001, 'Voksne', 1, NULL, NULL, 40.00, 6.00, 0.00, 0.00, 0),
+(0002, 'Børn under 18 år', 1, NULL, NULL, 0.00, 0.00, 0.00, 0.00, 0),
+(0003, 'Voksengrupper', 1, NULL, NULL, 35.00, 5.00, 0.00, 0.00, 0),
+(0004, 'Skoler og institutioner', 1, NULL, NULL, 0.00, 0.00, 0.00, 0.00, 0),
+(0005, 'Aftenåben', 1, NULL, NULL, 120.00, 16.50, 120.00, 16.50, 0),
+(0006, 'Omvisning/Byvandring, alm. åbningstid', 1, NULL, NULL, 45.00, 6.50, 45.00, 6.50, 0),
+(0007, 'Omvisning/byvandring, aften/weekend', 1, NULL, NULL, 65.00, 9.00, 65.00, 9.00, 0),
+(0008, 'Omvisning for skoler', 1, NULL, NULL, 600.00, 81.00, 600.00, 81.00, NULL),
+(009, 'Foredrag', 1, NULL, NULL, 2000.00, 268.00, 2000.00, 268.00, 0),
+(0010, 'Af museet planlagte foredrag', 1, NULL, NULL, 75.00, 10.50, 75.00, 10.50, 0); 
+SET foreign_key_checks = 1;
